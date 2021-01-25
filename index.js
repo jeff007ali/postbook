@@ -17,6 +17,8 @@ app.use('/api/comments', commentRoutes);
 mongoose.connect(process.env.DB_STRING, {useNewUrlParser: true, useUnifiedTopology: true}, () => 
     console.log("Connected to DB")
 );
+// To resolve this warning : "DeprecationWarning: Mongoose: `findOneAndUpdate()` and `findOneAndDelete()` without the `useFindAndModify` option set to false are deprecated."
+mongoose.set('useFindAndModify', false);
 
 // Send message for default URL
 app.get('/', (req, res) => res.send('Hello World with NodeJs and ExpressJs'));
