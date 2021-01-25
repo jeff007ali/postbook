@@ -26,7 +26,7 @@ exports.all = async (req, res) => {
         else{
             res.json({
                 status: "ERROR",
-                message: "Page is not available",
+                message: "Page parameter is invalid or not specified",
             });
         }
         
