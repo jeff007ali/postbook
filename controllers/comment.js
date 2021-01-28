@@ -16,6 +16,14 @@ exports.all = async (req, res) => {
           );
 
         console.log(distinctDates)
+        if (distinctDates.length == 0)
+        {
+            res.json({
+                status: "SUCCESS",
+                data: "No data found"
+            });
+        }
+
         if (0 < req.query.page && req.query.page <= distinctDates.length){
             var lowerDate = new Date(distinctDates[parseInt(req.query.page) - 1]["_id"]);
             var upparDate = new Date(lowerDate);
