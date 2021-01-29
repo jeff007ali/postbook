@@ -24,7 +24,7 @@ exports.all = async (req, res) => {
         }
 
         if (0 < req.query.page && req.query.page <= distinctDates.length){
-            var lowerDate = new Date(distinctDates[parseInt(req.query.page) - 1]["_id"]);
+            var lowerDate = new Date(distinctDates[distinctDates.length - parseInt(req.query.page)]["_id"]);
             var upparDate = new Date(lowerDate);
             upparDate.setDate(lowerDate.getDate()+1);
             upparDate.toLocaleDateString();
