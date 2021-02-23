@@ -53,6 +53,7 @@ exports.all = async (req, res) => {
 
 // Create Post
 exports.create = async (req, res) => {
+    // console.log(lowerDate);
     const post = new Post({
         title: req.body.title,
         description: req.body.description
